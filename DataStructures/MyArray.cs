@@ -140,6 +140,7 @@ namespace DataStructureImplementation.DataStructures
         }
         public void SortStructure()
         {
+            Console.WriteLine($"Total Records Sorted: {60000}");
             T[] tempArray = new T[arraySize];
             CopyData(tempArray);
             Console.WriteLine("Bubble Sort.........");

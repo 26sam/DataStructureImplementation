@@ -1,10 +1,5 @@
-﻿//using DataStructureImplementation.Enumerations;
+﻿using DataStructureImplementation.Enumerations;
 using DataStructureImplementation.DataStructures;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructureImplementation
 {
@@ -52,10 +47,10 @@ namespace DataStructureImplementation
 
             } while (true);
 
-            Console.WriteLine("Binding Data in Array..........");
+            /*Console.WriteLine("Binding Data in Array..........");
             myArray.LoadDataInDataStructure(records);
             Console.Clear();
-            myArray.SortStructure();
+            myArray.SortStructure();*/
 
             //Console.WriteLine("Binding Data in Stack..........");
             //myStack.LoadDataInDataStructure(records);
@@ -70,11 +65,13 @@ namespace DataStructureImplementation
             //Console.WriteLine("Binding Data in Singly Linked List..........");
             //myLinkedList.LoadDataInDataStructure(records);
             //Console.Clear();
+            //myLinkedList.SortDataStructure();
             //myLinkedList.PrintDataInDataStructure();
 
-            //Console.WriteLine("Binding Data in Doubly Linked List..........");
-            //myDoublyLinkedList.LoadDataInDataStructure(records);
-            //Console.Clear();
+            Console.WriteLine("Binding Data in Doubly Linked List..........");
+            myDoublyLinkedList.LoadDataInDataStructure(records);
+            Console.Clear();
+            myDoublyLinkedList.SortDataStructure();
             //myDoublyLinkedList.PrintDataInDataStructure();
 
         }
