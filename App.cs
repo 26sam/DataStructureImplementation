@@ -45,15 +45,7 @@ namespace DataStructureImplementation
             
             int iterator = 1;
 
-            MyDoublyLinkedList<Person> myDoublyLinkedList = new MyDoublyLinkedList<Person>();
-
-            Console.WriteLine("Binding Data in Doubly Linked List..........");
-            myDoublyLinkedList.LoadDataInDataStructure(records);
-            Console.Clear();
-            Console.WriteLine("DOUBLY LINKED LIST...............");
-            myDoublyLinkedList.SortDataStructure();
-
-            /*while (iterator < 5)
+            while (iterator < 5)
             {
                 switch ((DS)iterator)
                 {
@@ -121,7 +113,7 @@ namespace DataStructureImplementation
                         Console.WriteLine("Implemented All Data Structures");
                         break;
                 }
-            }*/
+            }
         }
 
     }
