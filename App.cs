@@ -5,9 +5,7 @@ namespace DataStructureImplementation
 {
     internal static class App
     {
-        private static int _sortingParameter;
-        public static int SortingParameter { get { return _sortingParameter; }set { _sortingParameter = value; } }
-
+        internal static int SortingParameter {get; private set; }
         private static void DisplayOptions()
         {
             Console.WriteLine("Sorting Parameters......\n");
@@ -16,18 +14,8 @@ namespace DataStructureImplementation
             Console.WriteLine("3. City");
             Console.WriteLine("4. State\n");
         }
-        public static void AppStart()
+        private static void SelectSortingParameter()
         {
-            Console.WriteLine("FetchingData........");
-            IEnumerable<Person> records = Records.FetchData();
-            Console.Clear();
-
-            MyArray<Person> myArray = new MyArray<Person>();
-            MyLinkedList<Person> myLinkedList = new MyLinkedList<Person>();
-            MyStack<Person> myStack = new MyStack<Person>();
-            MyQueue<Person> myQueue = new MyQueue<Person>();
-            MyDoublyLinkedList<Person> myDoublyLinkedList = new MyDoublyLinkedList<Person>();
-
             do
             {
                 Console.WriteLine("Sorting on the multiple data structures.........");
@@ -46,34 +34,94 @@ namespace DataStructureImplementation
                 Console.Clear();
 
             } while (true);
-
-            /*Console.WriteLine("Binding Data in Array..........");
-            myArray.LoadDataInDataStructure(records);
+        }
+        internal static void AppStart()
+        {
+            Console.WriteLine("FetchingData........");
+            IEnumerable<Person> records = Records.FetchData();
             Console.Clear();
-            myArray.SortStructure();*/
+            
+            SelectSortingParameter();
+            
+            int iterator = 1;
 
-            //Console.WriteLine("Binding Data in Stack..........");
-            //myStack.LoadDataInDataStructure(records);
-            //Console.Clear();
-            //myStack.PrintDataStructure();
-
-            //Console.WriteLine("Binding Data in Queue..........");
-            //myQueue.LoadDataInDataStructure(records);
-            //Console.Clear();
-            //myQueue.PrintDataStructure();
-
-            //Console.WriteLine("Binding Data in Singly Linked List..........");
-            //myLinkedList.LoadDataInDataStructure(records);
-            //Console.Clear();
-            //myLinkedList.SortDataStructure();
-            //myLinkedList.PrintDataInDataStructure();
+            MyDoublyLinkedList<Person> myDoublyLinkedList = new MyDoublyLinkedList<Person>();
 
             Console.WriteLine("Binding Data in Doubly Linked List..........");
             myDoublyLinkedList.LoadDataInDataStructure(records);
             Console.Clear();
+            Console.WriteLine("DOUBLY LINKED LIST...............");
             myDoublyLinkedList.SortDataStructure();
-            //myDoublyLinkedList.PrintDataInDataStructure();
 
+            /*while (iterator < 5)
+            {
+                switch ((DS)iterator)
+                {
+                    case DS.Array:
+                        MyArray<Person> myArray = new MyArray<Person>();
+
+                        Console.WriteLine("Binding Data in Array..........");
+                        myArray.LoadDataInDataStructure(records);
+                        Console.Clear();
+                        Console.WriteLine("ARRAY............");
+                        myArray.SortStructure();
+
+                        iterator++;
+                        break;
+
+                    case DS.Queue:
+                        MyQueue<Person> myQueue = new MyQueue<Person>();
+
+                        Console.WriteLine("Binding Data in Queue..........");
+                        myQueue.LoadDataInDataStructure(records);
+                        Console.Clear();
+                        Console.WriteLine("QUEUE.............");
+                        myQueue.SortDataStructure();
+
+                        iterator++;
+                        break;
+
+                    case DS.Stack:
+                        MyStack<Person> myStack = new MyStack<Person>();
+
+                        Console.WriteLine("Binding Data in Stack..........");
+                        myStack.LoadDataInDataStructure(records);
+                        Console.Clear();
+                        Console.WriteLine("STACK...............");
+                        myStack.SortDataStructure();
+
+                        iterator++;
+                        break;
+
+                    case DS.LinkedList:
+                        MyLinkedList<Person> myLinkedList = new MyLinkedList<Person>();
+
+                        Console.WriteLine("Binding Data in Singly Linked List..........");
+                        myLinkedList.LoadDataInDataStructure(records);
+                        Console.Clear();
+                        Console.WriteLine("LinkedList............");
+                        myLinkedList.SortDataStructure();
+
+                        iterator++;
+
+                        break;
+
+                    case DS.DoublyLinkedList:
+                        MyDoublyLinkedList<Person> myDoublyLinkedList = new MyDoublyLinkedList<Person>();
+
+                        Console.WriteLine("Binding Data in Doubly Linked List..........");
+                        myDoublyLinkedList.LoadDataInDataStructure(records);
+                        Console.Clear();
+                        Console.WriteLine("DOUBLY LINKED LIST...............");
+                        myDoublyLinkedList.SortDataStructure();
+
+                        break;
+
+                    default:
+                        Console.WriteLine("Implemented All Data Structures");
+                        break;
+                }
+            }*/
         }
 
     }

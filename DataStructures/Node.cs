@@ -2,9 +2,9 @@
 {
     internal class SLLNode<T> where T : IComparable<T>
     {
-        public T data;
-        public SLLNode<T>? next;
-        public SLLNode(T data)
+        internal T data;
+        internal SLLNode<T>? next;
+        internal SLLNode(T data)
         {
             this.data = data;
             next = null;
@@ -12,10 +12,10 @@
     }
     internal class DLLNode<T> where T : IComparable<T>
     {
-        public T data;
-        public DLLNode<T>? prev;
-        public DLLNode<T>? next;
-        public DLLNode(T data)
+        internal T data;
+        internal DLLNode<T>? prev;
+        internal DLLNode<T>? next;
+        internal DLLNode(T data)
         {
             this.data = data;
             prev = null;
